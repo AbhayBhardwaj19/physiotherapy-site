@@ -49,13 +49,10 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="tel:+91XXXXXXXXXX"
-                  className="inline-flex items-center justify-center gap-2 glass text-primary border-2 border-primary px-8 py-4 rounded-xl text-lg font-bold hover:bg-primary hover:text-white hover:shadow-glow transition-all duration-300 transform hover:scale-105"
+                  href="tel:+918077295562"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow"
                   aria-label="Call Now"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
                   Call Now
                 </a>
               </div>
@@ -382,7 +379,7 @@ export default function Home() {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <a
-              href="https://wa.me/91XXXXXXXXXX"
+              href="https://wa.me/918077295562?text=Hi%20Doctor%20Harshit%2C%20I%20want%20to%20book%20an%20appointment"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:shadow-glow transition-all duration-300 transform hover:scale-105 shadow-xl"
@@ -394,13 +391,10 @@ export default function Home() {
               Book on WhatsApp
             </a>
             <a
-              href="tel:+91XXXXXXXXXX"
-              className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-accent text-white px-10 py-5 rounded-2xl text-lg font-bold hover:shadow-glow transition-all duration-300 transform hover:scale-105 shadow-xl"
+              href="tel:+918077295562"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow"
               aria-label="Call Now"
             >
-              <svg className="w-7 h-7 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
               Call Now
             </a>
           </div>

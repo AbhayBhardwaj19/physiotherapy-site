@@ -13,8 +13,6 @@ export default function BookPage() {
     message: "",
   });
 
-  const phoneNumber = "91XXXXXXXXXX"; // Placeholder - replace with actual number
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -22,10 +20,8 @@ export default function BookPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Create WhatsApp message
+  // Construct WhatsApp URL from form data
+  const getWhatsAppUrl = () => {
     const message = `Hello! I would like to book an appointment:
     
 Name: ${formData.name}
@@ -33,15 +29,8 @@ Phone: ${formData.phone}
 Preferred Date: ${formData.date}
 Preferred Time: ${formData.time}
 Message: ${formData.message || "N/A"}`;
-
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    // Open WhatsApp
-    window.open(whatsappUrl, "_blank");
-    
-    // Optional: Here you can add API call to save the booking
-    // Example: await fetch('/api/bookings', { method: 'POST', body: JSON.stringify(formData) });
+    return `https://wa.me/918077295562?text=${encodedMessage}`;
   };
 
   return (
@@ -56,7 +45,7 @@ Message: ${formData.message || "N/A"}`;
               Fill out the form below and we&apos;ll contact you via WhatsApp to confirm your appointment.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form id="booking-form" className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                   Name <span className="text-red-500">*</span>
@@ -135,13 +124,22 @@ Message: ${formData.message || "N/A"}`;
                 />
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
-                aria-label="Submit booking form"
+              <a
+                href={getWhatsAppUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => {
+                  const form = document.getElementById('booking-form') as HTMLFormElement;
+                  if (form && !form.checkValidity()) {
+                    e.preventDefault();
+                    form.reportValidity();
+                  }
+                }}
+                className="w-full inline-block text-center bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all duration-200 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
+                aria-label="Submit booking form and open WhatsApp"
               >
                 Submit & Open WhatsApp
-              </button>
+              </a>
             </form>
 
             <p className="mt-6 text-sm text-gray-500 text-center">
