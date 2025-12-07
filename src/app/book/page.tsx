@@ -53,7 +53,7 @@ Message: ${formData.message || "N/A"}`;
           <div className="bg-white rounded-xl shadow-lg p-8 border border-primary/10">
             <h1 className="text-3xl font-bold text-primary mb-2">Book Your Appointment</h1>
             <p className="text-gray-600 mb-8">
-              Fill out the form below and we'll contact you via WhatsApp to confirm your appointment.
+              Fill out the form below and we&apos;'ll contact you via WhatsApp to confirm your appointment.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
